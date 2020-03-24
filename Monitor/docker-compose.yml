@@ -1,0 +1,9 @@
+version: '2'
+services:
+   modsec:
+     image: "prom/prometheus"
+     volumes:
+       - "/data/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
+     restart: "always"
+     ports:
+       - "9090:9090"
