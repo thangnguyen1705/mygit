@@ -18,5 +18,7 @@ do
        if [ $cout > 3 ]
        then
               echo " chay lenh"
+              pkill -9 -f tomcat
+              sh /opt/tomcat/bin/startup.sh
        fi
 done
