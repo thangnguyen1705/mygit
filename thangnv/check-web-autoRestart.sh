@@ -1,4 +1,10 @@
-#bin/sh
-n=(`curl -is http://47.244.169.77:8080/api/users/check | grep HTTP | awk '{print $2}'`)
-if n==200
+#!/bin/bash
 
+status=`curl -s -o /dev/null -w "%{http_code}" https://example.com`
+echo `date` $status >> crash_checks.log
+
+if [ "$status" -ne "200" ]
+then
+       # Take any appropriate recovery action here.
+	echo "webserver seems down, initiating reboot." >> check.log
+fi
