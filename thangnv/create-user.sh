@@ -4,7 +4,10 @@ yubikey="new123"
 sudo="1"
 publickey=""
 
-useradd $user
+checkuser=`cat /etc/passwd | grep $user`
+if [[ -z "$checkuser" ]] ; then
+    useradd $user
+fi
 
 if [[ ! -z "$pass" ]] ; then
     echo -e $pass'\n'$pass | passwd $user
@@ -21,9 +24,9 @@ if [[ ! -z "$yubikey" ]] ; then
 fi
 
 if [ $sudo == 1 ] ; then
-    checkuser=`cat /etc/sudoers | grep $user`
+    checksudo=`cat /etc/sudoers | grep $user`
     echo "check sudo" $user
-    if [[ -z "$checkuser" ]] ; then
+    if [[ -z "$checksudo" ]] ; then
     echo $user 'ALL=(ALL)        ALL' >> /etc/sudoers
     echo "sudo "
     fi
@@ -37,5 +40,9 @@ if [[ ! -z "$publickey" ]] ; then
     chmod 600 ./.ssh/authorized_keys
     echo $publickey >> /home/$user/.ssh/authorized_keys
     echo "publickey"
+fi
+
+if [[ ! -z "$group" ]] ; then
+
 fi
 
