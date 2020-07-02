@@ -1,7 +1,7 @@
-user="test"
-pass="test"
-yubikey=""
-sudo="0"
+user="thangnv"
+pass=""
+yubikey="test"
+sudo="1"
 publickey=""
 
 useradd $user
@@ -12,13 +12,17 @@ if [[ ! -z "$pass" ]] ; then
 fi
 
 if [[ ! -z "$yubikey" ]] ; then
+    yubikey_old=`cat /etc/yubipasswd | grep thangnv | awk -F':' '{print $2}'`
+    if [[ "$yubikey" != "$yubikey_old" ]] ; then
+    sed -i 's/'$user'/\#'$user'/g'  /etc/yubipasswd
     echo $user:$yubikey >> /etc/yubipasswd #key offline
     echo "yubikey"
 fi
 
 if [ $sudo == 1 ] ; then
-    checkuser=`cat /etc/sudoers | grep thangnv`
-    if [[ ! -z "$checkuser" ]] ; then
+    checkuser=`cat /etc/sudoers | grep $user`
+    echo "check sudo" $user
+    if [[ -z "$checkuser" ]] ; then
     echo $user 'ALL=(ALL)        ALL' >> /etc/sudoers
     echo "sudo "
     fi
