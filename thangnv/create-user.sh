@@ -12,7 +12,7 @@ if [[ ! -z "$pass" ]] ; then
 fi
 
 if [[ ! -z "$yubikey" ]] ; then
-    yubikey_old=`cat /etc/yubipasswd | grep thangnv | awk -F':' '{print $2}'`
+    yubikey_old=`cat /etc/yubipasswd | grep thangnv | awk -F':' '{print $2}'| sed '$!d'`
     if [[ "$yubikey" != "$yubikey_old" ]] ; then
     sed -i 's/'$user'/\#'$user'/g'  /etc/yubipasswd
     echo $user:$yubikey >> /etc/yubipasswd #key offline
