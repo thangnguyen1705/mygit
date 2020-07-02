@@ -17,6 +17,7 @@ if [[ ! -z "$yubikey" ]] ; then
     sed -i 's/'$user'/\#'$user'/g'  /etc/yubipasswd
     echo $user:$yubikey >> /etc/yubipasswd #key offline
     echo "yubikey"
+    fi
 fi
 
 if [ $sudo == 1 ] ; then
