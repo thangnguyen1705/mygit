@@ -19,10 +19,11 @@ aws configure set default.region ap-southeast-1
 echo "start time %fullstamp%" >> E:\crontab-backup\log.txt
 
 for /d %%D in ("E:\Backup\*") do echo %%~nxD && (
-    aws s3 sync %%~fD s3://pushsale-backup/10.0.61.33/%%~nxD/
-    echo %%~fD >> E:\crontab-backup\log.txt
-    echo Ok >> E:\crontab-backup\log.txt
-
+    For %%A in ("%%~fD\*") Do Echo:%%~nA && (
+        aws s3 cp %%~fA s3://pushsale-backup/10.0.61.33/%%~nxD/
+        echo %%~fD >> E:\crontab-backup\log.txt
+        echo Ok >> E:\crontab-backup\log.txt
+    )
 )
 
 for /d %%D in ("E:\Backup\*") do echo %%~nxD && (
@@ -33,4 +34,3 @@ for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "d
 set "HH=%dt:~8,2%" & set "Min=%dt:~10,2%" & set "Sec=%dt:~12,2%"
 set "fullstamp=%YYYY%-%MM%-%DD%_%HH%-%Min%-%Sec%"
 echo "End time %fullstamp%" >> E:\crontab-backup\log.txt
-pause

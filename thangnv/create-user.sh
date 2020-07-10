@@ -1,8 +1,4 @@
-user="thangnv"
-pass=""
-yubikey="new123"
-sudo="1"
-publickey=""
+
 
 checkuser=`cat /etc/passwd | grep $user`
 if [[ -z "$checkuser" ]] ; then

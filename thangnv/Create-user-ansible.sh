@@ -1,11 +1,8 @@
-#yubikey="vvjdfjdehjbl"
-#user="hoandx"
-#pass="h5kct26Sx"
+yubikey="vvjdfjdehjbl"
+user="hoandx"
+pass="h5kct26Sx"
+sudo="no"
 
-#useradd $user
-#echo -e $pass'\n'$pass | passwd $user
-#echo $user:$yubikey >> /etc/yubipasswd #key offline
-#echo $user 'ALL=(ALL)        ALL' >> /etc/sudoers
 
 checkuser=`cat /etc/passwd | grep $user`
 if [[ -z "$checkuser" ]] ; then
@@ -30,24 +27,16 @@ fi
 
 if [[ "$sudo" -eq "yes" ]] ; then
     checksudo=`cat /etc/sudoers | grep $user`
-    checksudo1=`grep -r "#"$user /etc/sudoers`
     echo "check sudo" $user
     if [[ -z "$checksudo" ]] ; then
         echo $user 'ALL=(ALL)        ALL' >> /etc/sudoers
         echo "sudo "
     fi
-    if [[ -z "$checksudo1" ]] ; then
-        sed -i 's/'$user'/\#'$user'/g' /etc/sudoers
-        echo "remove sudo "
-    fi
 fi
 
 if [[ "$sudo" -eq "no" ]] ; then
-        checksudo1=`grep -r "#"$user /etc/sudoers`
-        if [[ -z "$checksudo1" ]] ; then
-        sed -i 's/'$user'/\#'$user'/g' /etc/sudoers
+        sed -i '/'$user'/d' /etc/sudoers
         echo "sudo remove"
-        if
 fi
 
 
