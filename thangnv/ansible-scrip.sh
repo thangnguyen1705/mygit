@@ -1,5 +1,5 @@
 #bin/bash
-echo "remove user"
+echo " ####Remove User"
 echo " ####Bo qua nhung thong tin khong co"
 echo " #### nhap du an "
 read projects
