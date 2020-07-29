@@ -1,4 +1,5 @@
-list=`find  -name "*.gz" -mtime +60 | sed  's/\.\///g'`
+#!/bin/bash
+list=`find . -name "*.yaml" | sed  's/\.\///g'`
 for file in $list;do
-    aws s3 sync $path/$file s3://nexttech-backup/$HOSTNAME/$path/$file
+    kubectl apply -f $file
 done
