@@ -11,6 +11,7 @@ do
               # Take any appropriate recovery action here.
               echo "webserver seems down, $cout th"
               let cout++
+              sleep 2m
        else
               echo "web ok" >> /tmp/crash_checks.log
               break
