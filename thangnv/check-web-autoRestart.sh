@@ -22,6 +22,6 @@ do
               id=`netstat -lnput |  grep $port | awk '{print $7}'| sed "s/\/java//g"`
               echo "restart tomcat pidid:" $id >> /tmp/crash_checks.log
               kill -9 $id
-              sh /opt/tomcat4/bin/startup.sh
+              #sh /opt/tomcat4/bin/startup.sh
        fi
 done
