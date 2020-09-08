@@ -17,7 +17,7 @@ data:
         codec: best_compression
     setup.dashboards.enabled: true
     setup.kibana:
-      host: "< kibana endpoint >"
+      host: "efk-kibana:5601"
     output.elasticsearch:
       hosts: ["elasticsearch-master:9200"]
       indices:
