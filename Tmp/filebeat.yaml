@@ -1,0 +1,33 @@
+filebeat.inputs:
+- type: docker
+  containers.ids:
+  - '*'
+  processors:
+  - add_kubernetes_metadata:
+      in_cluster: true
+  - drop_event:
+      when:
+        not:
+          contains:
+            kubernetes.namespace: "default"
+  - drop_event:
+      when:
+          contains:
+            kubernetes.container.name: "istio-proxy"
+  - drop_event:
+      when:
+          contains:
+            kubernetes.container.name: "istio-init"
+  - drop_event:
+      when:
+          contains:
+            kubernetes.container.name: "nfs-client-provisioner"
+#output.elasticsearch:
+#  hosts: '${ELASTICSEARCH_HOSTS:elasticsearch-master:9200}'
+output.kafka:
+  # initial brokers for reading cluster metadata
+  hosts: ["10.0.8.110:9092"]
+
+  # message topic selection + partitioning
+  #topic: '%{[fields.log_topic]}'
+  topic: 'nextpay-k8s-payment'
