@@ -1,0 +1,88 @@
+{
+    "order": 0,
+    "version": 60001,
+    "index_patterns": [
+      "nl-mobi-api-*"
+    ],
+    "settings": {
+      "index": {
+        "number_of_shards": "3",
+        "refresh_interval": "5s"
+      }
+    },
+    "mappings": {
+      "dynamic_templates": [
+        {
+          "message_field": {
+            "path_match": "*",
+            "mapping": {
+              "norms": false,
+              "type": "text"
+            },
+            "match_mapping_type": "string"
+          }
+        },
+        {
+          "string_fields": {
+            "mapping": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "match_mapping_type": "string",
+            "match": "*"
+          }
+        }
+      ],
+      "properties": {
+        "mobiapi.transaction_sms": {
+          "type": "text"
+        },
+        "mobiapi.fee.max_amount": {
+          "type": "text"
+        },
+        "mobiapi.receiver_id": {
+          "type": "text"
+        },
+        "mobiapi.sender_verified_status": {
+          "type": "text"
+        },
+        "mobiapi.account_type": {
+          "type": "text"
+        },
+        "mobiapi.data.paymentMethodId": {
+          "type": "text"
+        },
+        "mobiapi.time_created": {
+          "type": "text"
+        },
+        "mobiapi.bank_account_link": {
+          "type": "text"
+        },
+        "@timestamp": {
+          "type": "date"
+        },
+        "mobiapi.time_created_to": {
+          "type": "text"
+        },
+        "mobiapi.user_id": {
+          "type": "text"
+        },
+        "mobiapi.transaction_id": {
+          "type": "text"
+        },
+        "@version": {
+          "type": "keyword"
+        },
+        "mobiapi.data.bank_category_id": {
+          "type": "text"
+        }
+      }
+    },
+    "aliases": {}
+  }
