@@ -4,7 +4,7 @@
 ## Backup Type
 DB_BAK_FLAG=1
 CONF_BAK_FLAG=1
-FILE_BAK_FLAG=1
+FILE_BAK_FLAG=0
 CRON_BAK_FLAG=1
 MONGO_BAK_FLAG=0
 ## Frequency of backup
@@ -15,11 +15,11 @@ FILE_DIR_LIST="/data/www/"         # Put a list here, seperated by space
 FILE_IGNORE_LIST="logs"  # Put a list to NOT backup here, seperated by space
 #CRON_DIR="/var/spool/cron/crontabs"
 CRON_DIR="/var/spool/cron"
-CONF_DIR_LIST="/etc/nginx /etc/httpd" # Put a list of config dirs need backing up
+CONF_DIR_LIST="/etc/ /usr/local/sbin" # Put a list of config dirs need backing up
 
 ################ MYSQL ###################
 DB_USER="backup"
-DB_PASS="fTAG8dP7WM"
+DB_PASS="NSXAjgKp123@sc"
 DB_DATABASE=""                           # Put a list of databases need backing up, Default = ALL
 #########################################
 ################# MONGO #################
@@ -69,7 +69,7 @@ function bak_file {
         echo $FILE_IGNORE_LIST
         for FILE_IGNORE in $FILE_IGNORE_LIST
         do
-                ignore="--exclude=$FILE_IGNORE $ignore" 
+                ignore="--exclude=$FILE_IGNORE $ignore"
         done
 
         # BAKUP AND REMOVE CODE
@@ -144,7 +144,7 @@ function bak_conf {
 
         D42=`date +%u-%d-%m-%Y-%Hh%Mm`
         echo "END: $D42" >> $BAK_LOGS_CREATE/${DATE}.log
-} 
+}
 function bak_mongo {
         FREQ=`echo $1 | awk '{print tolower($0)}'`
         #mkdir -p $BAK_DB_DIR/mysql/$DB/$FREQ
