@@ -39,30 +39,30 @@ deploy_dev:
   stage: release
   script:
     - cd $DEPLOY_PATH
-    - ./deploy-java.sh coredevelop $CWD
+    - ./deploy-next-servesion.sh coredevelop $CWD 
   only:
     - develop
   tags:
     - shell-runner
 
-deploy_staging:
-  stage: release
-  script:
-    - cd $DEPLOY_PATH
-    - ./deploy-java.sh staging $CWD
-  only:
-    - tags
-    - master
-  tags:
-    - shell-runner
-  when: manual
-
 deploy_core_staging:
   stage: release
   script:
     - cd $DEPLOY_PATH
-    - ./deploy-java.sh corestaging $CWD
+    - ./deploy-next-servesion.sh corestaging $CWD
   only:
-    - staging
+    - tags
   tags:
     - shell-runner
+  when: manual
+    
+deploy_core_prod:
+  stage: release
+  script:
+    - cd $DEPLOY_PATH
+    - ./deploy-next-servesion.sh production $CWD
+  only:
+    - tags
+  tags:
+    - shell-runner
+  when: manual
