@@ -1,0 +1,22 @@
+stages:
+  - build_docker
+  - docker_push
+
+before_script:
+  - export CI_COMMIT_TAG=$CI_COMMIT_TAG
+  - export IMAGE="quay.pvcb.vn/nganluong/$CI_PROJECT_NAME:$CI_COMMIT_TAG"
+  
+build_docker:
+  stage: build_docker
+  script:
+    - sudo docker build -t $IMAGE .
+  only:
+    - tags
+
+
+docker_build_push:
+  stage: docker_push
+  script:
+    - sudo docker push $IMAGE
+  only:
+    - tags
