@@ -1,0 +1,73 @@
+{
+  "order": 0,
+  "version": 60001,
+  "index_patterns": [
+    "nl-web-checkout-*"
+  ],
+  "settings": {
+    "index": {
+      "number_of_shards": "3",
+      "refresh_interval": "5s"
+    }
+  },
+  "mappings": {
+    "dynamic_templates": [
+      {
+        "message_field": {
+          "path_match": "*",
+          "mapping": {
+            "norms": false,
+            "type": "text"
+          },
+          "match_mapping_type": "string"
+        }
+      },
+      {
+        "string_fields": {
+          "mapping": {
+            "norms": false,
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            }
+          },
+          "match_mapping_type": "string",
+          "match": "*"
+        }
+      }
+    ],
+    "properties": {
+      "@timestamp": {
+        "type": "date"
+      },
+      "webcheckout.bank_trans_id": {
+        "type": "text"
+      },
+      "webcheckout.params.payment_ids": {
+        "type": "text"
+      },
+      "webcheckout.transaction_escrow": {
+        "type": "text"
+      },
+      "@version": {
+        "type": "keyword"
+      },
+      "webcheckout.cashin_amount": {
+        "type": "text"
+      },
+      "webcheckout.cashin_id": {
+        "type": "text"
+      },
+      "webcheckout.time_limit": {
+        "type": "text"
+      },
+      "webcheckout.result": {
+        "type": "text"
+      }
+    }
+  },
+  "aliases": {}
+}
