@@ -33,7 +33,7 @@ data:
 - index: "apm-%{[beat.version]}-span-%{+yyyy.MM.dd}"
           when.contains:
             processor.event: "span"
----
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -49,7 +49,7 @@ spec:
   selector:
     app: apm-server
   type: NodePort
----
+
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
