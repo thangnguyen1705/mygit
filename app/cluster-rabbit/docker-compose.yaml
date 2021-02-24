@@ -2,7 +2,7 @@ version: '2'
 
 services:
  rabbitmq-node-1:
-  image: rabbitmq:alpine
+  image: rabbitmq:3-management
   container_name: rabbitmq-node-1
   hostname: rabbitmq-node-1
   ports:
@@ -17,7 +17,7 @@ services:
    - RABBITMQ_DEFAULT_PASS=admin 
 
  rabbitmq-node-2:
-  image: rabbitmq:alpine
+  image: rabbitmq:3-management
   container_name: rabbitmq-node-2
   hostname: rabbitmq-node-2
   ports:
@@ -32,7 +32,7 @@ services:
    - RABBITMQ_DEFAULT_PASS=admin
 
  rabbitmq-node-3:
-  image: rabbitmq:alpine
+  image: rabbitmq:3-management
   container_name: rabbitmq-node-3
   hostname: rabbitmq-node-3
   ports:
