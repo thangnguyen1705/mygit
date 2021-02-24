@@ -6,3 +6,4 @@ rm -rf /tmp/ip400.txt
 cp -vp /tmp/ip401.txt /tmp/ip400.txt
 chmod 777 /tmp/ip400.txt
 rsync -avz /tmp/ip400.txt thangnv@10.0.8.215:/var/www/html/eld/ip.txt
+#thangnvnasdasd
