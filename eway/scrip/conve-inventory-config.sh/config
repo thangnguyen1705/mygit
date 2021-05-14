@@ -1,0 +1,493 @@
+
+Host adflex-prod2
+  HostName 188.166.253.30
+  User root
+
+Host adflex-prod3
+  HostName 128.199.180.164
+  User root
+
+Host adflex-prod19
+  HostName 128.199.116.101
+  User root
+
+Host adflex-cpo-landing-page
+  HostName 139.59.126.179
+  User root
+
+Host adflex-prod23
+  HostName 188.166.236.127
+  User root
+
+Host adflex-parking-domain
+  HostName 159.65.2.66
+  User root
+
+Host adflex-prod21
+  HostName 139.59.250.131
+  User root
+
+Host adflex-prod6
+  HostName 188.166.187.241
+  User root
+
+Host adflex-prod17
+  HostName 128.199.172.158
+  User root
+
+Host adflex-muahangnhanh
+  HostName 206.189.94.18
+  User root
+
+Host adflex-prod50
+  HostName 165.22.54.198
+  User root
+
+Host adflex-prod51
+  HostName 157.245.159.119
+  User root
+
+Host adflex-prod53
+  HostName 159.65.13.51
+  User root
+
+Host adflex-cpo-link-service01
+  HostName 209.97.174.38
+  User root
+
+Host cpo-crm-adflex-vn
+  HostName 159.65.128.143
+  User root
+
+Host cpo-loadbalancer-internal
+  HostName 128.199.182.234
+  User root
+
+Host cpo-es-click01
+  HostName 68.183.176.223
+  User root
+
+Host cpo-es-click02
+  HostName 68.183.184.32
+  User root
+
+Host cpo-es-click03
+  HostName 68.183.180.231
+  User root
+
+Host cpo-es-click04
+  HostName 68.183.188.143
+  User root
+
+Host cpo-es-click05
+  HostName 68.183.178.134
+  User root
+
+Host cpo-link-service02
+  HostName 178.128.120.244
+  User root
+
+Host cpo-link-service03
+  HostName 178.128.54.240
+  User root
+
+Host cpo-link-service04
+  HostName 157.230.245.19
+  User root
+
+Host cpo-link-service05
+  HostName 157.230.245.32
+  User root
+
+Host cpo-conversion-service01
+  HostName 128.199.167.124
+  User root
+
+Host cpo-conversion-service02
+  HostName 159.65.2.125
+  User root
+
+Host cpo-backend-api-service01
+  HostName 159.89.202.73
+  User root
+
+Host cpo-backend-api-service02
+  HostName 188.166.226.214
+  User root
+
+Host cpo-redis-cache01
+  HostName 128.199.107.139
+  User root
+
+Host cpo-mongo-meta01
+  HostName 178.128.21.228
+  User root
+
+Host cpo-mongo-meta02
+  HostName 188.166.215.241
+  User root
+
+Host cpo-mongo-meta03
+  HostName 188.166.218.251
+  User root
+
+Host cpi-service01
+  HostName 167.71.214.223
+  User root
+
+Host cpi-service02
+  HostName 178.128.55.70
+  User root
+
+Host cpi-service04
+  HostName 157.230.255.21
+  User root
+
+Host cpi-service05
+  HostName 188.166.227.198
+  User root
+
+Host cpi-service06
+  HostName 188.166.235.63
+  User root
+
+Host cpi-link-service03
+  HostName 167.71.206.128
+  User root
+
+Host cpi-link-service08
+  HostName 178.128.222.212
+  User root
+
+Host cpi-link-service09
+  HostName 178.128.209.90
+  User root
+
+Host cpi-link-service10
+  HostName 165.22.101.144
+  User root
+
+Host cpi-link-service11
+  HostName 167.71.216.52
+  User root
+
+Host cpi-link-service12
+  HostName 128.199.168.135
+  User root
+
+Host cpi-link-service13
+  HostName 128.199.143.61
+  User root
+
+Host cpi-link-service14
+  HostName 128.199.146.176
+  User root
+
+Host cpi-es-click01
+  HostName 128.199.246.250
+  User root
+
+Host cpi-es-click02
+  HostName 157.245.150.250
+  User root
+
+Host cpi-es-click03
+  HostName 128.199.248.165
+  User root
+
+Host cpi-es-click04
+  HostName 128.199.161.43
+  User root
+
+Host cpi-es-click05
+  HostName 139.59.248.102
+  User root
+
+Host cpi-es-click06
+  HostName 104.248.148.61
+  User root
+
+Host cpi-es-click07
+  HostName 104.248.158.82
+  User root
+
+Host cpi-es-click08
+  HostName 128.199.181.149
+  User root
+
+Host cpi-es-converion01
+  HostName 128.199.249.205
+  User root
+
+Host cpi-es-converion02
+  HostName 157.245.158.105
+  User root
+
+Host cpi-es-converion03
+  HostName 165.22.60.61
+  User root
+
+Host pushtimize-prod-302
+  HostName 206.189.145.2
+  User root
+
+Host pushtimize-prod-303
+  HostName 178.128.103.164
+  User root
+
+Host pushtimize-prod-304
+  HostName 165.22.50.0
+  User root
+
+Host pushtimize-prod-305
+  HostName 157.230.253.19
+  User root
+
+Host pushtimize-prod-306
+  HostName 159.65.9.39
+  User root
+
+Host pushtimize-prod-307
+  HostName 68.183.185.126
+  User root
+
+Host pushtimize-prod-309
+  HostName 157.245.192.90
+  User root
+
+Host pushtimize-prod-feed01
+  HostName 178.128.209.151
+  User root
+
+Host pushtimize-db02
+  HostName 68.183.232.253
+  User root
+
+Host pushtimize-pg-database01
+  HostName 68.183.188.175
+  User root
+
+Host pushtimize-bidding-service01
+  HostName 165.22.255.83
+  User root
+
+Host pushtimize-bidding-service02
+  HostName 134.209.103.134
+  User root
+
+Host pushsale-prod02
+  HostName 206.189.91.230
+  User root
+
+Host pushsale-prod01
+  HostName 206.189.144.52
+  User root
+
+Host pushsale-prod03
+  HostName 159.89.206.68
+  User root
+
+Host pushsale-prod04
+  HostName 206.189.89.119
+  User root
+
+Host warehouse-prod01
+  HostName 178.128.108.46
+  User root
+
+Host adflex-data-warehouse01
+  HostName 143.198.193.216
+  User root
+
+Host masoffer-proxy
+  HostName 104.248.148.139
+  User root
+
+Host masoffer-proxy02
+  HostName 128.199.181.199
+  User root
+
+Host masoffer-proxy03
+  HostName 139.59.243.85
+  User root
+
+Host mo-landing-pages01
+  HostName 157.245.53.173
+  User root
+
+Host mo-service03
+  HostName 157.230.241.135
+  User root
+
+Host mo-service04
+  HostName 134.209.102.155
+  User root
+
+Host mo-service05
+  HostName 206.189.156.182
+  User root
+
+Host mo-sg01
+  HostName 157.230.44.127
+  User root
+
+Host mo-sg02
+  HostName 165.22.254.93
+  User root
+
+Host mo-sg03
+  HostName 206.189.81.94
+  User root
+
+Host mo-sg04
+  HostName 178.128.109.25
+  User root
+
+Host mo-sg05
+  HostName 104.248.150.209
+  User root
+
+Host mo-sg06
+  HostName 104.248.151.103
+  User root
+
+Host mo-sg07
+  HostName 178.128.115.31
+  User root
+
+Host mo-sg08
+  HostName 128.199.181.148
+  User root
+
+Host mo-link-service01
+  HostName 134.209.107.111
+  User root
+
+Host mo-link-service02
+  HostName 134.209.107.112
+  User root
+
+Host mo-bamboo-01
+  HostName 128.199.131.81
+  User root
+
+Host mo-bamboo-02
+  HostName 128.199.128.25
+  User root
+
+Host mo-bamboo-03
+  HostName 128.199.237.59
+  User root
+
+Host mo-ec2-service01
+  HostName 54.251.91.158
+  User root
+
+Host mo-ec2-service02
+  HostName 13.228.31.164
+  User root
+
+Host mo-ec2-service03
+  HostName 18.140.161.2
+  User root
+
+Host op-docker-repo
+  HostName 178.128.25.157
+  User root
+
+Host k8s-master
+  HostName 206.189.80.22
+  User root
+
+Host op-k8s-vpn
+  HostName 178.128.95.187
+  User root
+
+Host adflex-production-vpn
+  HostName 159.65.8.155
+  User root
+
+Host fedora-service03
+  HostName 157.230.244.170
+  User root
+
+Host fedora-service04
+  HostName 134.209.103.82
+  User root
+
+Host pinggo-service01
+  HostName 68.183.185.217
+  User root
+
+Host pinggo-service02
+  HostName 209.97.161.0
+  User root
+
+Host pinggo-service03
+  HostName 209.97.161.100
+  User root
+
+Host pinggo-dev
+  HostName 178.128.102.18
+  User root
+
+Host docs
+  HostName 165.22.243.33
+  User root
+
+Host jira
+  HostName 178.128.211.192
+  User root
+
+Host pushtimize-dev01
+  HostName 128.199.234.39
+  User root
+
+Host eway-websites
+  HostName 206.189.155.21
+  User root
+
+Host jen-eway-vn
+  HostName 54.254.14.150
+  User root
+
+Host adflex-sentry
+  HostName 188.166.189.18
+  User root
+
+Host eway-docs1
+  HostName 178.128.30.131
+  User root
+
+Host pod-service01
+  HostName 188.166.221.1
+  User root
+
+Host cdn01.pushtimize.com-01
+  HostName 202.134.19.66
+  User root
+
+Host cdn01.pushtimize.com-02
+  HostName 202.134.19.67
+  User root
+
+Host cdn01.pushtimize.com-03
+  HostName 202.134.19.77
+  User root
+
+Host cpo-landing-muahangnhanh-01
+  HostName 183.91.11.101
+  User root
+
+Host cpo-landing-muahangnhanh-02
+  HostName 183.91.11.205
+  User root
+
+Host cpo-clicks-google01
+  HostName 35.240.205.159
+  User root
+
+Host cpo-clicks-google02
+  HostName 35.240.131.40
+  User root
+

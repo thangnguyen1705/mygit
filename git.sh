@@ -1,5 +1,4 @@
 #!bin/bash
 git add .
-git commit -m "update `date`"
-git push -u origin master
-htop
+git commit -m "$1"
+git push
