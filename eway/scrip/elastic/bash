@@ -1,0 +1,1 @@
+curl -XPUT "http://localhost:9200/_snapshot/backup_repo" -H 'Content-Type: application/json' -d'{  "type": "fs",  "settings": {    "location": "/home/thangnv/Documents/GIT/thangnv/mygit/eway/scrip/elastic",    "compress": true  }}'
