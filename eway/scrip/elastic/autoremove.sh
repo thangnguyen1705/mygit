@@ -5,6 +5,9 @@ do
     # curl -X POST "http://localhost:9200/hot_$alias"
     # curl -X POST "http://localhost:9200/_aliases" -d "{\"actions\":[{\"add\":{\"index\":\"hot_$alias\",\"alias\":\"$alias\"}}]}" 
     # curl -X POST "http://localhost:9200/_aliases" -d "{\"actions\":[{\"add\":{\"index\":\"hot_$alias\",\"alias\":\"clicks\"}}]}"
-    curl -H "Content-Type: application/json" -XPOST "http://localhost:9200/$alias/new/optionalUniqueId" -d "{ \"field\" : \"value\"}"
-    
+    # curl -H "Content-Type: application/json" -XPOST "http://localhost:9200/$alias/new/optionalUniqueId" -d "{ \"field\" : \"value\"}"
+    sudo docker run --rm -ti -d -v /data:/tmp elasticdump/elasticsearch-dump \
+    --input=http://2ebfbebb3e10.ngrok.io/$alias \
+    --output=/tmp/$alias_mapping.json \
+    --type=data
 done
