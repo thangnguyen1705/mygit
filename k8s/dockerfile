@@ -1,0 +1,28 @@
+FROM alpine
+
+RUN apk update && apk add curl git openssh
+
+RUN apk --update add \
+      bash \
+      sudo \
+      openssh \
+      netcat-openbsd \
+      autossh \
+    &&  rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
+
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.15.1/bin/linux/amd64/kubectl
+RUN chmod u+x kubectl && mv kubectl /bin/kubectl
+RUN mkdir -p /root/.ssh && \
+    chmod 0700 /root/.ssh && \
+    ssh-keyscan git.eway.vn > /root/.ssh/known_hosts
+
+RUN ssh-keygen -f   /root/.ssh/id_rsa    -N '' -t rsa
+
+RUN cat /root/.ssh/id_rsa
+
+RUN cat /root/.ssh/id_rsa.pub
+
+
+RUN mkdir /root/.kube
+
+COPY kubectl /root/.kube/config
