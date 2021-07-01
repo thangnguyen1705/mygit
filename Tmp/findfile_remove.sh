@@ -1,3 +1,10 @@
-find -name "*log" -mtime +90 -exec echo -n -e {}"\0" \; | du -hc --files0-from=-
+time=30 #days
+logfile="/tmp/backup-cpi.log"
+folder="/data/backup/backup_cpi_clicks"
+name=json.gz
+date=`date "+%D %T"`
+
+echo "########### $date ##############" >> $logfile
+find $folder -name "*$name" -mtime +$time -exec echo -n -e {}"\0" \; | du -hc --files0-from=- >> $logfile
 # delete the files!
-find /var/lib/docker/volumes/web-ap-adflex-dosg23-php7-home-public-html/_data/g8.ap.adflex.vn/storage/logs -name "*log" -mtime +90 -exec rm '{}' \;doc  
+find $folder -name "*$name" -mtime +$time -exec rm '{}' \;
